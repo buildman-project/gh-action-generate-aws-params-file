@@ -1,0 +1,23 @@
+name: Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ./
+        id: step-with-output
+        with:
+          FileName: |
+            ../params.json
+
+          ParamsEnv: |
+            NEXT_PUBLIC_AUTH_BASE_URL = http://localhost:3000/api
+            OTHER_PUBLIC_VARIABLE = "whatever"
+            ANOTHER_PUBLIC_VARIABLE = 'whatever'
+
+      - run: |
+          echo `../params.json`

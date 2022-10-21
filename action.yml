@@ -1,0 +1,14 @@
+name: replace in file
+description: replaces word in file
+
+inputs:
+  env-variables:
+    required: true
+    description: string of env variables like in a .env file format
+  task-definition:
+    required: true
+    description: json string of task definition
+
+runs:
+  using: node16
+  main: dist/index.js
