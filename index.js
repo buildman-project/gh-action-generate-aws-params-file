@@ -23,7 +23,7 @@ const generateParametersArray = (paramsStr) => {
       };
       return pair;
     }, []);
-  return Json.stringify(paramsObject);
+  return JSON.stringify(paramsObject);
 };
 
 const writeFile = (filename, strContent) => {
