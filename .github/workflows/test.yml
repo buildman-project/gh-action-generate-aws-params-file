@@ -20,4 +20,4 @@ jobs:
             ANOTHER_PUBLIC_VARIABLE = 'whatever'
 
       - run: |
-          sudo cat `../params.json`
+          sudo cat ../params.json
