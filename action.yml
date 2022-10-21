@@ -2,10 +2,10 @@ name: replace in file
 description: replaces word in file
 
 inputs:
-  env-variables:
+  ParamsEnv:
     required: true
-    description: string of env variables like in a .env file format
-  task-definition:
+    description: string of aws parameters like in a .env file format
+  FileName:
     required: true
     description: json string of task definition
 
