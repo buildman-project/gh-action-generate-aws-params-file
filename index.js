@@ -17,10 +17,13 @@ const generateParametersArray = (paramsStr) => {
       let [name, value] = line
         .split("=")
         .map((s) => s.trim().replace(/^"|"$/g, "").replace(/^'|'$/g, ""));
+
+      const usePreviousValue = value === "@use-previous-value";
       const pair = {
         ParameterKey: name,
-        ParameterValue: value,
+        UsePreviousValue: usePreviousValue,
       };
+      if (!usePreviousValue) pair.ParameterValue = value;
       return pair;
     }, []);
   return JSON.stringify(paramsObject);
