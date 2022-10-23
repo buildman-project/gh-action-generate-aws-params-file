@@ -17,7 +17,7 @@ jobs:
           ParamsEnv: |
             NEXT_PUBLIC_AUTH_BASE_URL = http://localhost:3000/api
             OTHER_PUBLIC_VARIABLE = "whatever"
-            ANOTHER_PUBLIC_VARIABLE = 'whatever'
+            USE_THE_SAME=@use-previous-value
 
       - run: |
           cat ../params.json
